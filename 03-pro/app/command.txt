@@ -1,0 +1,10 @@
+# создание образа на основе описания в файле Dockerfile
+docker build -t 1tdata_1_3_03_pro_app:latest .
+# посмотреть список образов
+docker images 
+# создать контейнер на основе образа с подключением тома
+docker run --name 1tdata_03_app_con -d 1tdata_1_3_03_pro_app:latest 
+# посмотреть список запущенных контейнеров
+docker ps
+
+
