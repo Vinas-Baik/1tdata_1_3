@@ -1,0 +1,13 @@
+# создание образа на основе описания в файле Dockerfile
+docker build -t 1tdata_1_3:latest .
+# посмотреть список образов
+docker images 
+# создать контейнер на основе образа с подключением тома
+docker run -rm -p 15432:15432 --name 1tdata_con -v /data:/var/lib/postgresql/data -d 1tdata_1_3:latest 
+# посмотреть список запущенных контейнеров
+docker ps
+# посмотреть список томов
+docker volume ls
+# подключение к докер контейнеру
+docker exec -it 1tdata_con psql -U 1tdata 
+
